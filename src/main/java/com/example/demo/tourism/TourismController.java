@@ -1,4 +1,4 @@
 package com.example.demo.tourism;
 
-public class tourismController {
+public class TourismController {
 }

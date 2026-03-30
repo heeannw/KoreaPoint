@@ -1,4 +1,4 @@
 package com.example.demo.transport;
 
-public class transportController {
+public class TransportController {
 }
