@@ -758,7 +758,7 @@
                 <p class="section-sub">Latest travel reviews & tips from visitors</p>
             </div>
             <div style="display:flex;gap:12px;align-items:center">
-                <a class="write-btn" href="write.html">✏️ Write Post</a>
+                <a th:href="@{/post/{id}(id=${post.id})}">게시글 제목...</a>
                 <a class="see-all" href="community.html">See all →</a>
             </div>
         </div>
