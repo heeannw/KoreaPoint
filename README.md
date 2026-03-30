@@ -1,2 +1,2 @@
-# team-project
+# KoreaPoint
 메타빌드 3기 2팀 중간프로젝트(외국인 플랫폼)
