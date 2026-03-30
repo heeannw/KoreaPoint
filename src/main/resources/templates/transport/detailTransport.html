@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Route Detail</title>
+
+    <!-- 홈에서 쓰던 폰트 그대로 -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --red: #3b9eff;
+            --red-dark: #1a7de0;
+            --gold: #38bdf8;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light: #f0f7ff;
+            --white: #ffffff;
+            --border: #dbeafe;
+            --radius: 14px;
+            --shadow: 0 4px 24px rgba(59,158,255,0.10);
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--red);
+        }
+
+        /* 공통 */
+        .section { padding: 48px 40px; }
+        .container { max-width: 1140px; margin: 0 auto; }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* 카드 */
+        .card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        /* 지도 */
+        .map-box {
+            width: 100%;
+            height: 420px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        /* 리스트 */
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .list-item {
+            background: #fff;
+            padding: 16px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        /* 2개 카드 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+        }
+
+        footer {
+            background: var(--dark);
+            color: #aaa;
+            padding: 30px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">KoreaPoint</div>
+</header>
+
+<!-- 1. 경로 요약 -->
+<section class="section">
+    <div class="container">
+
+        <div class="card">
+            <div style="font-size:18px; font-weight:600;">
+                서울역 → 강남역
+            </div>
+            <div style="color:var(--gray); margin-top:6px;">
+                ⏱ 30분 · 🔄 환승 1회
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 2. 지도 -->
+<section class="section">
+    <div class="container">
+
+        <h2 class="section-title">Route Map</h2>
+
+        <div id="map" class="map-box"></div>
+
+    </div>
+</section>
+
+<!-- 3. 이동 단계 -->
+<section class="section">
+    <div class="container">
+
+        <h2 class="section-title">Step Guide</h2>
+
+        <div class="list">
+
+            <div class="list-item">🚇 2호선 탑승 (서울역)</div>
+            <div class="list-item">📍 홍대입구역 하차</div>
+            <div class="list-item">🚪 3번 출구 이동</div>
+            <div class="list-item">🚶 도보 5분</div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 4. 혼잡도 -->
+<section class="section">
+    <div class="container">
+
+        <h2 class="section-title">Crowd Level</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <div>현재 시간</div>
+                <div style="font-size:20px; font-weight:600;">07:30</div>
+                <div style="color:red;">혼잡</div>
+            </div>
+
+            <div class="card">
+                <div>예상 상태</div>
+                <div style="font-size:20px; font-weight:600;">출근 시간</div>
+                <div style="color:red;">매우 붐빔</div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 5. 팁 -->
+<section class="section">
+    <div class="container">
+
+        <h2 class="section-title">Tips</h2>
+
+        <div class="list">
+            <div class="list-item">💳 교통카드는 지하철역에서 충전 가능</div>
+            <div class="list-item">🚇 환승 시 30분 이내 무료</div>
+            <div class="list-item">🌐 영어 표지판 제공</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © KoreaPoint
+</footer>
+
+<!-- Kakao Map -->
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_KEY"></script>
+<script>
+    var mapContainer = document.getElementById('map');
+    var mapOption = {
+        center: new kakao.maps.LatLng(37.5665, 126.9780),
+        level: 5
+    };
+
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+</script>
+
+</body>
+</html>
