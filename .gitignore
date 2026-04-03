@@ -31,3 +31,20 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IntelliJ build
+out/
+
+# Local env (개인 설정)
+.env
+.env.*
+application-local.properties
+application-local.yml
+application-local.yaml

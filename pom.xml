@@ -83,6 +83,12 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!--부트스트랩-->
+		<dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
